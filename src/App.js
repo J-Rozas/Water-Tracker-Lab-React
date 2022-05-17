@@ -1,8 +1,8 @@
 import MainPage from './pages/MainPage';
-import useToggle from './hooks/toggle';
+import useToggleLight from './hooks/toggleLight';
 
 function App() {
-  const darkMode = useToggle();
+  const darkMode = useToggleLight();
 
   return (
     <div className={darkMode.isDarkMode ? "dark" : "light"}>
