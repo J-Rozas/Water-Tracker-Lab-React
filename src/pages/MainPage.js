@@ -5,6 +5,8 @@ import '../App.css';
 import Header from '../components/Header';
 import TrackerContainer from '../containers/TrackerContainer';
 
+import UserContext from '../context/UserContext';
+
 const MainPage = () => {
 
     const [name, setName] = useState('Stranger');
@@ -39,7 +41,9 @@ const MainPage = () => {
             </Modal>
 
             <Header name={name}/>
-            <TrackerContainer name={name} goal={goal} />
+            <UserContext.Provider value={{name, goal}}>
+                <TrackerContainer/>
+            </UserContext.Provider>
         </>
     )
 }
