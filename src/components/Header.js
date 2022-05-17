@@ -1,9 +1,19 @@
+import React, { useContext } from "react";
+import UserContext from "../context/UserContext";
 
-const Header = ({name}) => {
+const Header = () => {
 
+    const {name} = useContext(UserContext);
+    
     return (
         <>
-            <h2>Hello {name} 👋</h2>
+            <UserContext.Consumer>
+                { () => {
+                    return (
+                        <h2>Hello {name} 👋</h2>
+                    )}
+                }
+            </UserContext.Consumer>
         </>
     )
 }

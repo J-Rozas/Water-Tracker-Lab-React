@@ -40,8 +40,8 @@ const MainPage = () => {
                 <button onClick={toggleModal}>OK</button>
             </Modal>
 
-            <Header name={name}/>
-            <UserContext.Provider value={{name, goal}}>
+            <UserContext.Provider value={{name, setName, goal, setGoal}}>
+                <Header/>
                 <TrackerContainer/>
             </UserContext.Provider>
         </>
