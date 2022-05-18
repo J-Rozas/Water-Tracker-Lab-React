@@ -7,20 +7,13 @@ const TrackerDisplay = ({glasses}) => {
     const {name, goal} = useContext(UserContext);
 
     return (
-            <UserContext.Consumer>
-                { () => {
-                    return (
-                        <>
-                            <p>{name}'s daily goal: {goal}</p>
-                            <p>Glasses drunk: {glasses}</p>
-                            <PieChart glasses={glasses} />
-                            { glasses >= goal ? "Goal reached! 🥳" : null }
-                            <br></br>
-                        </>
-                    )
-                }
-            } 
-            </UserContext.Consumer>
+        <>
+            <p>{name}'s daily goal: {goal}</p>
+            <p>Glasses drunk: {glasses}</p>
+            <PieChart glasses={glasses} />
+            { glasses >= goal ? "Goal reached! 🥳" : null }
+            <br></br>
+        </>
     )
 }
 
